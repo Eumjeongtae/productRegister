@@ -1,0 +1,50 @@
+[
+  {
+    "main": "여성의류",
+    "value":"waman"
+  },
+  {
+    "main": "남성의류",
+    "value":"man"
+  },
+  {
+    "main": "신발",
+    "value":"shoes"
+  },
+  {
+    "main": "가방/지갑",
+    "value":"bag"
+  },
+  {
+    "main": "시계",
+    "value":"watch"
+  },
+  {
+    "main": "쥬얼리",
+    "value":"jewellery"
+  },
+  {
+    "main": "패션",
+    "value":"fashion"
+  }
+  ,
+  {
+    "main": "디지털",
+    "value":"digital"
+  }
+  ,
+  {
+    "main": "가전제품",
+    "value":"electronics"
+  }
+  ,
+  {
+    "main": "스포츠",
+    "value":"sport"
+  }
+  ,
+  {
+    "main": "레저",
+    "value":"leisure"
+  }
+]
