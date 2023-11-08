@@ -1,0 +1,49 @@
+.inner {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.ProductRegisterTitle {
+  height: 100px;
+  color: rgb(25, 25, 25);
+  font-size: 26px;
+  font-weight: 400;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-bottom: 2px solid rgb(25, 25, 25);
+
+  span {
+    color: rgb(216, 12, 24);
+    font-size: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+fieldset .inputContainer:nth-child(2) label::after {
+  content: '';
+}
+
+fieldset {
+
+  .inputContainer {
+    display: flex;
+    padding: 2rem;
+    bottom: 1px solid #eee;
+
+    label {
+      width: 10%;
+      font-size: 18px;
+      font-weight: 400;
+      color: rgb(25, 25, 25);
+
+      &:after {
+        content: '*';
+      }
+
+
+    }
+
+
+  }
+}
