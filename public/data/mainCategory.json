@@ -24,27 +24,12 @@
     "value":"jewellery"
   },
   {
-    "main": "패션",
+    "main": "패션 액세서리",
     "value":"fashion"
   }
   ,
   {
-    "main": "디지털",
-    "value":"digital"
-  }
-  ,
-  {
-    "main": "가전제품",
-    "value":"electronics"
-  }
-  ,
-  {
-    "main": "스포츠",
-    "value":"sport"
-  }
-  ,
-  {
-    "main": "레저",
-    "value":"leisure"
+    "main": "차량/오토바이",
+    "value":"car"
   }
 ]

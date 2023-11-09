@@ -4,7 +4,7 @@ export default function ProductCategory(props) {
 
   const [mainCategory, setMainCategory] = useState([]);
   const [middleCategory, setMiddleCategory] = useState([]);
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState(['','','']);
 
   useEffect(() => {
     fetch(`data/mainCategory.json `)
@@ -18,14 +18,15 @@ export default function ProductCategory(props) {
 
   }, []);
 
-  let handleClick = (e) => {
-    setColor(e.target.value)
+  let handleClick = (e,i) => {
+    let copy = [...color]
+    copy[i] = e.target.value
+    setColor(copy)
   }
   let onSecondCategory = (e) => {
     fetch(`data/middle/${e.target.value}.json `)
       .then((res) => res.json())
       .then(data => {
-        console.log(data);
         setMiddleCategory(data)
       })
       .catch(() => { console.log('error') });
@@ -34,11 +35,20 @@ export default function ProductCategory(props) {
     <div className={props.class}>
       <div>
         {mainCategory.map((v, i) =>
-          <button value={v.value} className={color === v.value ? 'on' : ''} type="button"
+          <button value={v.value} className={color[0] === v.value ? 'on' : ''} type="button"  key = {i}
             onClick={(e) => {
-              handleClick(e)
+              handleClick(e,0)
               onSecondCategory(e)
             }}>{v.main}
+          </button>)}
+      </div>
+      <div>
+        {middleCategory.map((v, i) =>
+          <button value={v.middleValue} className={color[1] === v.middleValue ? 'on' : ''} type="button" key = {i}
+            onClick={(e) => {
+              handleClick(e,1)
+              // onSecondCategory(e)
+            }}>{v.middle}
           </button>)}
       </div>
     </div>
