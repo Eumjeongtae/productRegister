@@ -30,6 +30,15 @@ fieldset .inputContainer {
 fieldset .inputContainer p:nth-child(2) {
   width: calc(100% - 200px);
 }
+fieldset .inputContainer p:nth-child(2) .categoryNotice {
+  color: rgb(245, 126, 0);
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
+fieldset .inputContainer p:nth-child(2) .categoryNotice i {
+  font-size: 16px;
+  margin-right: 5px;
+}
 fieldset .inputContainer input {
   height: 45px;
   padding: 0 1rem;
@@ -137,11 +146,14 @@ fieldset .inputContainer .register {
   height: 19rem;
   overflow: hidden;
   border-radius: 2px;
-  border: 1px solid;
-  border-width: 1px rgb(245, 126, 0);
+  border: 1px solid rgb(204, 204, 204);
   background: rgb(255, 255, 255);
 }
+fieldset .inputContainer .register.active {
+  border: 1px solid rgb(245, 126, 0) !important;
+}
 fieldset .inputContainer .register > div {
+  position: relative;
   width: 33.3333%;
   height: 100%;
   overflow-y: auto;
@@ -149,6 +161,20 @@ fieldset .inputContainer .register > div {
   font-weight: 600;
   color: rgb(99, 99, 99);
   padding: 0.5rem 0;
+}
+fieldset .inputContainer .register > div .categoryNon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(153, 153, 153);
+}
+fieldset .inputContainer .register > div:nth-child(2) {
+  border: 1px solid rgb(204, 204, 204);
+  border-top: none;
+  border-bottom: none;
 }
 fieldset .inputContainer .register > div button {
   width: 100%;

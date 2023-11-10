@@ -7,9 +7,10 @@ export default function ProductRegister() {
   let [form, setForm] = useState({ 'productName': '' })
   let [textNum, setTextNum] = useState(0);
   let [show, setShow] = useState(false);
+  const [active, setActive] = useState(false)
 
-  const handleChange = (e)=>{
-    const {name,value} = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   }
 
@@ -23,6 +24,10 @@ export default function ProductRegister() {
       setShow(false)
       e.target.classList.remove('on')
     }
+  }
+
+  let catagoryClick = (v)=>{
+    setActive(v)
   }
 
   return (
@@ -55,7 +60,8 @@ export default function ProductRegister() {
         <div className="inputContainer">
           <label htmlFor="productName">카테고리</label>
           <p className="productCategory">
-            <ProductCategory class='register'/>
+            <ProductCategory class='register'  onClick = {catagoryClick} />
+            { active && <p className="categoryNotice"><i className="xi-close-circle-o"></i>상세 카테고리를 선택해주세요.</p>}
           </p>
         </div>
 

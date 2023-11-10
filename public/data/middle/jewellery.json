@@ -2,7 +2,7 @@
   {
     "middle": "귀걸이/피어싱",
     "middleValue":"earing"
-  },
+  }, 
   {
     "middle": "목걸이",
     "middleValue":"necklace"
@@ -10,21 +10,5 @@
   {
     "middle": "팔찌",
     "middleValue":"handRing"
-  },
-  {
-    "middle": "발찌",
-    "middleValue":"footRing"
-  },
-  {
-    "middle": "반지",
-    "middleValue":"ring"
-  },
-  {
-    "middle": "쥬얼리 세트",
-    "middleValue":"jewellerySet"
-  },
-  {
-    "middle": "기타 쥬얼리",
-    "middleValue":"anotherJewellery"
   }
 ]
