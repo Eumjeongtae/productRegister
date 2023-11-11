@@ -1,6 +1,10 @@
 .inner {
-  width: 65%;
+  width: 60%;
   margin: 0 auto;
+}
+
+.submit {
+  color: #000;
 }
 
 .ProductRegisterTitle {
@@ -31,6 +35,7 @@ fieldset .inputContainer p:nth-child(2) {
   width: calc(100% - 200px);
 }
 fieldset .inputContainer p:nth-child(2) .categoryNotice {
+  display: block;
   color: rgb(245, 126, 0);
   font-size: 14px;
   margin-top: 0.5rem;
@@ -38,6 +43,16 @@ fieldset .inputContainer p:nth-child(2) .categoryNotice {
 fieldset .inputContainer p:nth-child(2) .categoryNotice i {
   font-size: 16px;
   margin-right: 5px;
+}
+fieldset .inputContainer p:nth-child(2) .choiceCategory {
+  margin-top: 1.5rem;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(216, 12, 24);
+}
+fieldset .inputContainer p:nth-child(2) .choiceCategory b {
+  font-weight: 600;
 }
 fieldset .inputContainer input {
   height: 45px;

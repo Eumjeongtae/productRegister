@@ -7,7 +7,7 @@ export default function ProductCategory(props) {
   const [secondCategory, setSecondCategory] = useState([])
   const [lastCategory, setLastCategory] = useState([])
   const [color, setColor] = useState(['', '', '']);
-  const [active, setActive] = useState('')
+  const [active, setActive] = useState('');
 
   useEffect(() => {
     fetch(`data/mainCategory.json `)
@@ -20,7 +20,7 @@ export default function ProductCategory(props) {
   let onSecondCategory = (e) => {
     setLastCategory([])
     setActive('active')
-    props.onClick(true);
+    props.onClick(true,'first',e.target.value);
 
     fetch(`data/middle/${e.target.value}.json `)
       .then((res) => res.json())
@@ -37,10 +37,10 @@ export default function ProductCategory(props) {
         setLastCategory(data)
         if (data.length == 0) {
           setActive('')
-          props.onClick(false);
+          props.onClick(false,'second',e.target.value);
         } else {
           setActive('active')
-          props.onClick(true);
+          props.onClick(true,'second',e.target.value);
 
         }
 
@@ -85,7 +85,7 @@ export default function ProductCategory(props) {
               onClick={(e) => {
                 handleClick(e, 2)
                 setActive('')
-                props.onClick(false);
+                props.onClick(false,'last',e.target.value);
               }}>{v.last}
             </button>)}
       </div>

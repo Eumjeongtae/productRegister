@@ -1,9 +1,11 @@
 .inner {
-  width: 65%;
+  width: 60%;
   margin: 0 auto;
 }
 
-
+.submit{
+  color: #000;
+}
 
 .ProductRegisterTitle {
   height: 100px;
@@ -37,6 +39,7 @@ fieldset {
       width: calc(100% - 200px);
 
       .categoryNotice {
+        display: block;
         color: rgb(245, 126, 0);
         font-size: 14px;
         margin-top: 0.5rem;
@@ -44,6 +47,16 @@ fieldset {
         i {
           font-size: 16px;
           margin-right: 5px;
+        }
+      }
+      .choiceCategory{
+        margin-top: 1.5rem;
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(216, 12, 24);
+        b{
+          font-weight: 600;
         }
       }
     }
@@ -225,6 +238,7 @@ fieldset {
           &.on {
             color: rgb(216, 12, 24);
           }
+
         }
       }
 

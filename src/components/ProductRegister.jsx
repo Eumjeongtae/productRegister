@@ -4,7 +4,7 @@ import ProductCategory from './ProductCategory';
 
 export default function ProductRegister() {
 
-  let [form, setForm] = useState({ 'productName': '' })
+  let [form, setForm] = useState({ 'productName': '' ,'first' : '','second':'', 'last' :''})
   let [textNum, setTextNum] = useState(0);
   let [show, setShow] = useState(false);
   const [active, setActive] = useState(false)
@@ -26,12 +26,21 @@ export default function ProductRegister() {
     }
   }
 
-  let catagoryClick = (v)=>{
-    setActive(v)
+  let catagoryClick = (boolean,name ,value) => {
+    setActive(boolean)
+    setForm({ ...form, [name]: value });
+
+
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(form);
   }
 
   return (
-    <form className="inner">
+    <form className="inner" onSubmit={handleSubmit}>
+      
       <fieldset>
         <h2 className="ProductRegisterTitle">기본정보<span>*필수항목</span></h2>
         <div className="inputContainer">
@@ -60,14 +69,36 @@ export default function ProductRegister() {
         <div className="inputContainer">
           <label htmlFor="productName">카테고리</label>
           <p className="productCategory">
-            <ProductCategory class='register'  onClick = {catagoryClick} />
-            { active && <p className="categoryNotice"><i className="xi-close-circle-o"></i>상세 카테고리를 선택해주세요.</p>}
+            <ProductCategory class='register' onClick={catagoryClick} />
+            {active && <span className="categoryNotice"><i className="xi-close-circle-o"></i>상세 카테고리를 선택해주세요.</span>}
+            {/* <span className="choiceCategory">선택한 카테고리 :<b>{select[0]}</b> <b>&gt; {select[1]}</b><b> &gt;{select[2]}</b> </span> */}
           </p>
         </div>
 
-
+        <button className="submit">전송</button>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
       </fieldset>
+
     </form>
   );
 }
