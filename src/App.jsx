@@ -1,5 +1,5 @@
-import './reset.css';
-import ProductRegister from './components/ProductRegister';
+import './style/App.css';
+import ProductRegister from './pages/ProductRegister';
 
 function App() {
   return (
