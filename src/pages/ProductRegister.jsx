@@ -3,15 +3,19 @@ import '../style/register/Register.css';
 import ProductCategory from '../component/Register/ProductCategory';
 
 export default function ProductRegister() {
-  let location = '경기도 성남시 중원구 성남동' // 나중에 api 데이터로 변경
 
-  let [form, setForm] = useState({ 'productName': '', 'category': '',   location } )
+  // 초기 위치 정보 (나중에 API 데이터로 변경될 수 있음)
+  let location = '경기도 성남시 중원구 성남동' 
+  // 상태 관리를 위한 useState 훅 사용
+  let [form, setForm] = useState({ 'productName': '', 'category': '', location, 'price': '' })
   let [textNum, setTextNum] = useState(0);  // 상품이름 input 글자수 체크
-  let [show, setShow] = useState(false);  // 상품이름 input 테두리 색 온오프
+  let [show, setShow] = useState(false);  // 상품명을 입력 멘트온오프
   const [active, setActive] = useState(false) // '상세 카테고리를 선택해주세요.' 멘트 온오프
   let [first, setFirst] = useState(''); // 카테고리 천째칸
   let [second, setScond] = useState(''); // 카테고리 둘째칸
   let [last, setLast] = useState(''); // 카테고리 셋째칸
+  let checkNum = /^[0-9]/; // 가격 숫자만 정규식
+  let [priceNotice, setPriceNotice] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,6 +32,21 @@ export default function ProductRegister() {
       setShow(false)
       e.target.classList.remove('on')
     }
+  }
+  let priceNumCheck = (e) => {
+    let priceNum = e.target.value
+    if (parseInt(priceNum) < 100) {
+      e.target.classList.add('on')
+      setPriceNotice(true)
+    } else {
+      e.target.classList.remove('on')
+      setPriceNotice(false)
+    }
+    if (!checkNum.test(priceNum)) {
+      setForm({ ...form, 'price': '' });
+    }
+
+    setForm({ ...form, 'price': priceNum !== '' ? parseInt(priceNum) : '' });
   }
 
   let catagoryClick = (boolean, value, txt, n) => {
@@ -108,22 +127,48 @@ export default function ProductRegister() {
               <span >사용하지 않은 새 상품</span>
             </label>
             <label for="newProduct2" className="productRadio">
-              <input id="newProduct2" type="radio" name="use"/>사용감 없음
+              <input id="newProduct2" type="radio" name="use" />사용감 없음
               <span >사용은 했지만 눈에 띄는 흔적이나 얼룩이 없음</span>
             </label>
             <label for="newProduct3" className="productRadio">
-              <input id="newProduct3" type="radio" name="use"/>사용감 적음
+              <input id="newProduct3" type="radio" name="use" />사용감 적음
               <span >눈에 띄는 흔적이나 얼룩이 약간 있음</span>
             </label>
             <label for="newProduct4" className="productRadio">
-              <input id="newProduct4" type="radio" name="use"/>사용감 많음
+              <input id="newProduct4" type="radio" name="use" />사용감 많음
               <span >눈에 띄는 흔적이나 얼룩이 많이 있음</span>
             </label>
             <label for="newProduct5" className="productRadio">
-              <input id="newProduct5" type="radio" name="use"/> 고장/파손 상품
+              <input id="newProduct5" type="radio" name="use" /> 고장/파손 상품
               <span >기능 이상이나 외관 손상 등으로 수리/수선 필요</span>
             </label>
           </div>
+        </div>
+
+        <div className="inputContainer">
+          <p className="inputTitle">교환</p>
+          <div className="formRadio">
+            <label for="disable" >
+              <input id="disable" type="radio" name="change" />불가
+            </label>
+            <label for="ablr" >
+              <input id="ablr" type="radio" name="change" />가능
+            </label>
+          </div>
+        </div>
+
+        <div className="inputContainer">
+          <p className="inputTitle">가격</p>
+          <div className="priceInput">
+            <input type="text" id="price" name="price" value={form.price} onChange={(e) => {
+              handleChange(e);
+              priceNumCheck(e);
+            }} maxLength='11' placeholder="가격을 입력해 주세요." />
+            <span className="notice">
+              {priceNotice && <><i className="xi-ban"></i>100원 이상 입력해주세요.</>}
+            </span>
+          </div>
+
         </div>
 
 

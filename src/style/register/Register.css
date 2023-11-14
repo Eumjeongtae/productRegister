@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .inner {
   width: 60%;
   margin: 0 auto;
@@ -34,6 +35,18 @@ fieldset .inputContainer {
 fieldset .inputContainer div:nth-child(2) {
   width: calc(100% - 200px);
 }
+fieldset .inputContainer div:nth-child(2) .notice {
+  display: block;
+  width: 100%;
+  color: rgb(245, 126, 0);
+  font-size: 14px;
+  margin-top: 0.5rem;
+  align-items: center;
+  text-align: left;
+}
+fieldset .inputContainer div:nth-child(2) .notice i {
+  margin-right: 10px;
+}
 fieldset .inputContainer div:nth-child(2) .categoryNotice {
   display: block;
   color: rgb(245, 126, 0);
@@ -54,38 +67,87 @@ fieldset .inputContainer div:nth-child(2) .choiceCategory {
 fieldset .inputContainer div:nth-child(2) .choiceCategory b {
   font-weight: 600;
 }
-fieldset .inputContainer div:nth-child(2) .productRadio {
+fieldset .inputContainer div:nth-child(2) label {
   display: flex;
   line-height: 125%;
   color: rgb(25, 25, 25);
   align-items: center;
-  position: relative;
-  margin-right: 2rem;
-  margin-bottom: 15px;
   cursor: pointer;
 }
-fieldset .inputContainer div:nth-child(2) .productRadio:last-child {
-  margin-bottom: 0;
-}
-fieldset .inputContainer div:nth-child(2) .productRadio span {
-  margin-left: 8px;
-  font-size: 14px;
-  margin-top: 3px;
-  color: rgb(102, 102, 102);
-}
-fieldset .inputContainer div:nth-child(2) .productRadio input[type=radio] {
+fieldset .inputContainer div:nth-child(2) label input[type=radio] {
+  position: relative;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   opacity: 30%;
   margin: 10px;
-  border: none;
   padding: 0;
-  border: 1px solid #cfcfcf;
+  cursor: pointer;
 }
-fieldset .inputContainer div:nth-child(2) .productRadio input[type=radio]:checked {
+fieldset .inputContainer div:nth-child(2) label input[type=radio]:hover::before {
+  background-color: #dddddd;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #858585;
+}
+fieldset .inputContainer div:nth-child(2) label input[type=radio]:checked {
   opacity: 1;
   accent-color: red;
+}
+fieldset .inputContainer div:nth-child(2) label input[type=radio]:checked::before {
+  content: "";
+  border: none;
+}
+fieldset .inputContainer div:nth-child(2) label input[type=radio]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 2px solid #858585;
+  box-sizing: border-box;
+}
+fieldset .inputContainer div:nth-child(2) label.productRadio {
+  -webkit-box-align: center;
+  position: relative;
+  margin-right: 2rem;
+  margin-bottom: 15px;
+}
+fieldset .inputContainer div:nth-child(2) label.productRadio:last-child {
+  margin-bottom: 0;
+}
+fieldset .inputContainer div:nth-child(2) label.productRadio span {
+  margin-left: 8px;
+  font-size: 14px;
+  margin-top: 3px;
+  color: rgb(102, 102, 102);
+}
+fieldset .inputContainer div:nth-child(2).formRadio {
+  display: flex;
+}
+fieldset .inputContainer div:nth-child(2).formRadio label {
+  margin-right: 20px;
+}
+fieldset .inputContainer div:nth-child(2).priceInput {
+  position: relative;
+  width: 40%;
+  height: 45px;
+}
+fieldset .inputContainer div:nth-child(2).priceInput::after {
+  content: "원";
+}
+fieldset .inputContainer div:nth-child(2).priceInput::after {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(153, 153, 153);
 }
 fieldset .inputContainer div.nameInput {
   display: flex;
@@ -93,32 +155,11 @@ fieldset .inputContainer div.nameInput {
 }
 fieldset .inputContainer div.nameInput #productName {
   width: 90%;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 125%;
-  color: rgb(25, 25, 25);
-  border-radius: 2px;
-  border: 1px solid rgb(204, 204, 204);
-}
-fieldset .inputContainer div.nameInput #productName.on {
-  outline: 1px solid rgb(245, 126, 0) !important;
 }
 fieldset .inputContainer div.nameInput span {
   width: 10%;
   line-height: 45px;
   text-align: right;
-}
-fieldset .inputContainer div.nameInput .notice {
-  display: block;
-  width: 100%;
-  color: rgb(245, 126, 0);
-  font-size: 14px;
-  margin-top: 0.5rem;
-  align-items: center;
-  text-align: left;
-}
-fieldset .inputContainer div.nameInput .notice i {
-  margin-right: 10px;
 }
 fieldset .inputContainer div .register {
   display: flex;
@@ -190,8 +231,19 @@ fieldset .inputContainer div.sellerLocation input {
   width: 100%;
 }
 fieldset .inputContainer input {
+  width: 100%;
   height: 45px;
   padding: 0 1rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 125%;
+  color: rgb(25, 25, 25);
+  border-radius: 2px;
+  border: 1px solid rgb(204, 204, 204);
+  box-sizing: border-box;
+}
+fieldset .inputContainer input.on {
+  outline: 1px solid rgb(245, 126, 0) !important;
 }
 fieldset .inputContainer .inputTitle {
   width: 200px;
