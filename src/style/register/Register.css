@@ -331,4 +331,7 @@ fieldset .inputContainer .imgExplain {
   line-height: 180%;
   font-size: 14px;
   font-weight: 400;
+}
+fieldset .inputContainer.borderNone {
+  border: none;
 }/*# sourceMappingURL=Register.css.map */

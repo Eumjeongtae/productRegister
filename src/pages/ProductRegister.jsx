@@ -24,7 +24,7 @@ export default function ProductRegister() {
   const copyArr = (boolean, n) => {
     let copy = [...notice]
     copy[n] = boolean
-    setNotice(copy)
+    setNotice(copy) // boolean값으로 notice 메세지 띄우기 위해
   }
   let textNumCheck = (e, n) => {
     let txtNum = e.target.value.length;
@@ -99,10 +99,10 @@ export default function ProductRegister() {
     if (txtNum < 10) {
 
       e.target.classList.add('on')
-      copyArr(true, n)
+      copyArr(true, n) //boolean값으로 notice 메세지 띄우기 위해
     } else {
       copyArr(false, n)
-      e.target.classList.remove('on')
+      e.target.classList.remove('on') 
     }
   }
 
@@ -192,7 +192,7 @@ export default function ProductRegister() {
           </div>
         </div>
 
-        <div className="inputContainer">
+        <div className="inputContainer borderNone">
           <p className="inputTitle">가격</p>
           <div >
             <p className="priceInput">

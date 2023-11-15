@@ -420,7 +420,9 @@ fieldset {
     }
 
 
-
+    &.borderNone{
+      border: none;
+    }
 
   }
 }
