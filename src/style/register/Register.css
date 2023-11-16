@@ -32,6 +32,9 @@ fieldset .inputContainer {
   padding: 2rem 0;
   border-bottom: 1px solid rgb(218, 218, 218);
 }
+fieldset .inputContainer:last-child {
+  margin-bottom: 50px;
+}
 fieldset .inputContainer .formRadio {
   display: flex;
 }
@@ -79,6 +82,7 @@ fieldset .inputContainer input[type=radio]::before {
   box-sizing: border-box;
 }
 fieldset .inputContainer div:nth-child(2) {
+  position: relative;
   width: calc(100% - 200px);
 }
 fieldset .inputContainer div:nth-child(2) .notice {
@@ -110,7 +114,7 @@ fieldset .inputContainer div:nth-child(2) .choiceCategory {
   font-weight: 400;
   color: rgb(216, 12, 24);
 }
-fieldset .inputContainer div:nth-child(2) .choiceCategory b {
+fieldset .inputContainer div:nth-child(2) .choiceCategory span {
   font-weight: 600;
 }
 fieldset .inputContainer div:nth-child(2) label {
@@ -135,33 +139,33 @@ fieldset .inputContainer div:nth-child(2) label.productRadio span {
   margin-top: 3px;
   color: rgb(102, 102, 102);
 }
-fieldset .inputContainer div:nth-child(2) .priceInput {
-  position: relative;
-  width: 400px;
-  margin-bottom: 10px;
-}
-fieldset .inputContainer div:nth-child(2) .priceInput::after {
-  content: "원";
-}
-fieldset .inputContainer div:nth-child(2) .priceInput::after {
-  position: absolute;
-  right: 14px;
-  top: 14px;
-  font-size: 16px;
-  font-weight: 400;
-  color: rgb(153, 153, 153);
-}
-fieldset .inputContainer div:nth-child(2) .priceInput b {
+fieldset .inputContainer div:nth-child(2) b {
   display: block;
+  width: 100%;
   color: rgb(102, 102, 102);
   font-size: 12px;
   font-weight: 400;
   line-height: 180%;
 }
-fieldset .inputContainer div:nth-child(2) .priceInput b.marginT {
+fieldset .inputContainer div:nth-child(2) b.marginT {
   margin-top: 8px;
 }
-fieldset .inputContainer div:nth-child(2) textarea {
+fieldset .inputContainer div:nth-child(2) .infoNoticeTxt {
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgb(153, 153, 153);
+}
+fieldset .inputContainer div:nth-child(2) .infoNoticeTxt span {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+fieldset .inputContainer textarea {
   width: 100%;
   resize: none;
   border-radius: 2px;
@@ -169,8 +173,28 @@ fieldset .inputContainer div:nth-child(2) textarea {
   box-sizing: border-box;
   padding: 1rem;
 }
-fieldset .inputContainer div:nth-child(2) textarea.on {
+fieldset .inputContainer textarea.on {
   outline: 1px solid rgb(245, 126, 0) !important;
+}
+fieldset .inputContainer .infoNotice {
+  display: flex;
+}
+fieldset .inputContainer .priceInput {
+  position: relative;
+  width: 400px;
+  margin-bottom: 10px;
+}
+fieldset .inputContainer .priceInput::after {
+  content: "원";
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(153, 153, 153);
+}
+fieldset .inputContainer .priceInput.quantity::after {
+  content: "개";
 }
 fieldset .inputContainer div.nameInput {
   display: flex;
@@ -334,4 +358,49 @@ fieldset .inputContainer .imgExplain {
 }
 fieldset .inputContainer.borderNone {
   border: none;
+}
+
+form {
+  position: relative;
+}
+form .submitBar {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: rgb(246, 246, 246);
+  box-shadow: rgb(229, 229, 229) 0px -1px 0px 0px;
+  z-index: 10;
+}
+form .submitBar ul {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin: 0 auto;
+}
+form .submitBar ul button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 16px 45px;
+  border-radius: 2px;
+  border: 1px solid rgb(229, 229, 229);
+  background: rgb(255, 255, 255);
+  color: rgb(102, 102, 102);
+  font-size: 18px;
+  font-weight: 700;
+}
+form .submitBar ul button:hover {
+  background-color: #f7f7f7;
+}
+form .submitBar ul button.submit {
+  background: rgb(216, 12, 24);
+  color: #fff;
+}
+form .submitBar ul button.submit:hover {
+  background: rgb(190, 14, 26);
 }/*# sourceMappingURL=Register.css.map */

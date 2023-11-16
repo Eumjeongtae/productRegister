@@ -35,6 +35,10 @@ fieldset {
     padding: 2rem 0;
     border-bottom: 1px solid rgb(218, 218, 218);
 
+    &:last-child {
+      margin-bottom: 50px;
+    }
+
     .formRadio {
       display: flex;
 
@@ -96,6 +100,7 @@ fieldset {
     }
 
     & div:nth-child(2) {
+      position: relative;
       width: calc(100% - 200px);
 
       .notice {
@@ -122,6 +127,7 @@ fieldset {
           font-size: 16px;
           margin-right: 5px;
         }
+
       }
 
       .choiceCategory {
@@ -131,9 +137,15 @@ fieldset {
         font-weight: 400;
         color: rgb(216, 12, 24);
 
-        b {
+        span {
           font-weight: 600;
         }
+
+
+
+
+
+
       }
 
       label {
@@ -167,52 +179,79 @@ fieldset {
         }
       }
 
-      .priceInput {
-        position: relative;
-        width: 400px;
-        margin-bottom: 10px;
-
-        &::after {
-          content: '원';
-        }
-
-        &::after {
-          position: absolute;
-          right: 14px;
-          top: 14px;
-
-          font-size: 16px;
-          font-weight: 400;
-          color: rgb(153, 153, 153);
-        }
-
-        b {
-          display: block;
-          color: rgb(102, 102, 102);
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 180%;
-
-          &.marginT {
-            margin-top: 8px;
-          }
-        }
-
-
-      }
-
-      textarea {
+      b {
+        display: block;
         width: 100%;
-        resize: none;
-        border-radius: 2px;
-        border: 1px solid rgb(204, 204, 204);
-        box-sizing: border-box;
-        padding: 1rem;
+        color: rgb(102, 102, 102);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 180%;
 
-        &.on {
-          outline: 1px solid rgb(245, 126, 0) !important;
+        &.marginT {
+          margin-top: 8px;
+        }
+
+
+      }
+
+      .infoNoticeTxt {
+        pointer-events: none;
+        position: absolute;
+        top: 0px;
+        padding: 1rem;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        color: rgb(153, 153, 153);
+
+        span {
+          display: inline-block;
+          margin-top: 8px;
+          font-size: 12px;
         }
       }
+
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+      border-radius: 2px;
+      border: 1px solid rgb(204, 204, 204);
+      box-sizing: border-box;
+      padding: 1rem;
+
+      &.on {
+        outline: 1px solid rgb(245, 126, 0) !important;
+      }
+    }
+
+    .infoNotice {
+      display: flex;
+    }
+
+    .priceInput {
+      position: relative;
+      width: 400px;
+      margin-bottom: 10px;
+
+      &::after {
+        content: '원';
+        position: absolute;
+        right: 14px;
+        top: 14px;
+
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(153, 153, 153);
+      }
+
+      &.quantity::after {
+        content: '개';
+      }
+
+
+
     }
 
     div {
@@ -420,9 +459,65 @@ fieldset {
     }
 
 
-    &.borderNone{
+    &.borderNone {
       border: none;
     }
 
+  }
+}
+
+form {
+  position: relative;
+
+  .submitBar {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: rgb(246, 246, 246);
+    box-shadow: rgb(229, 229, 229) 0px -1px 0px 0px;
+    z-index: 10;
+
+    ul {
+      display: flex;
+      height: 100%;
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      -webkit-box-align: center;
+      align-items: center;
+      gap: 14px;
+      margin: 0 auto;
+
+      button {
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 16px 45px;
+        border-radius: 2px;
+        border: 1px solid rgb(229, 229, 229);
+        background: rgb(255, 255, 255);
+        color: rgb(102, 102, 102);
+        font-size: 18px;
+        font-weight: 700;
+
+        &:hover {
+          background-color: #f7f7f7;
+        }
+
+        &.submit {
+          background: rgb(216, 12, 24);
+          color: #fff;
+
+          &:hover {
+            background: rgb(190, 14, 26);
+
+          }
+        }
+      }
+    }
   }
 }
